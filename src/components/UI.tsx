@@ -1,0 +1,4 @@
+import type {ReactNode} from 'react';
+export function Title({title,subtitle,action}:{title:string;subtitle?:string;action?:ReactNode}){return <div className="mb-7 flex flex-wrap items-start justify-between gap-4"><div><h1 className="text-2xl font-extrabold tracking-tight sm:text-3xl">{title}</h1>{subtitle&&<p className="mt-2 text-sm muted">{subtitle}</p>}</div>{action}</div>}
+export function Empty({text}:{text:string}){return <div className="rounded-xl border border-dashed border-slate-200 p-10 text-center text-sm muted dark:border-slate-700">{text}</div>}
+export function Progress({value}:{value:number}){return <div className="h-2.5 overflow-hidden rounded-full bg-slate-100 dark:bg-slate-800"><div className={`h-full rounded-full ${value>100?'bg-red-500':'bg-blue-600'}`} style={{width:`${Math.max(0,Math.min(value,100))}%`}}/></div>}
